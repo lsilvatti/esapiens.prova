@@ -94,6 +94,17 @@ export const repositoryGridClasses = createUseStyles({
             }
         }
     },
+    header:{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center"
+    }, 
+    select:{
+        "& select":{
+            marginLeft:10
+        }
+    },
     container:{
         display: "flex",       
         flexFlow: "row wrap",
@@ -131,19 +142,4 @@ export const repositoryGridClasses = createUseStyles({
             flexBasis: "50%",
         }
     },
-    empty:{
-        display: "flex",
-        flexDirection: "column",
-        textAlign: "center",
-        minHeight: "300px",
-        alignItems: "center",
-        justifyContent: "center",
-        '& svg': {
-            opacity: 0.4,
-        },
-        '& span':{
-            marginTop: 20,
-            opacity: 0.4,
-        }
-    }
 })
