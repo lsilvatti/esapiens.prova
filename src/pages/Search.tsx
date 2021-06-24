@@ -1,13 +1,34 @@
-import { searchStyles } from './styles';
+import { useLocation } from 'react-router-dom'
+import { Fragment, useEffect, useState } from 'react';
+import { searchUsers } from 'services/requests';
+import SearchBar  from 'components/search/Bar';
+import ReturnError from 'components/common/Error';
 
-import SearchField from "components/search/field";
-
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+  }
 
 export default function Search(){
-    const classes = searchStyles();
+    const query = useQuery();
+    const [error, setError] = useState(false);
+
+    useEffect(()=>{
+        searchUsers(query.get("user") ?? "").then((response) =>{
+            console.log(response);
+        }).catch((error) => {
+            setError(true);
+        });
+    }, [])
+
     return (
-            <div className={classes.container}>
-            <SearchField />
-            </div>
+         <Fragment>
+             <SearchBar />
+             {error ? 
+             <div>
+                 <ReturnError message="A pesquisa não retornou resultados!" />
+             </div>
+             :
+             <div></div>}
+         </Fragment>
     )
 }
