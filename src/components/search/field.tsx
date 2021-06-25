@@ -15,7 +15,7 @@ export default function SearchField(props: SearchProps){
     const query = useQuery();
     const { fieldChange } = props;
 
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState<string>("");
 
     const handleChange= (event: React.ChangeEvent<HTMLInputElement>) => {
         setValue(event.target.value);
@@ -32,7 +32,8 @@ export default function SearchField(props: SearchProps){
 
     useEffect(() =>{
         setValue(query.get("user") ?? "");
-    },[query])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
     const classes = searchFieldStyles();
 
     return (
