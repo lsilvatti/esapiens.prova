@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.ba6e41b1.chunk.css",
-    "main.js": "/static/js/main.a4017159.chunk.js",
-    "main.js.map": "/static/js/main.a4017159.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.bba2b1b3.js",
-    "runtime-main.js.map": "/static/js/runtime-main.bba2b1b3.js.map",
-    "static/js/2.d29a63e8.chunk.js": "/static/js/2.d29a63e8.chunk.js",
-    "static/js/2.d29a63e8.chunk.js.map": "/static/js/2.d29a63e8.chunk.js.map",
-    "static/js/3.c7256313.chunk.js": "/static/js/3.c7256313.chunk.js",
-    "static/js/3.c7256313.chunk.js.map": "/static/js/3.c7256313.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.ba6e41b1.chunk.css.map": "/static/css/main.ba6e41b1.chunk.css.map",
-    "static/js/2.d29a63e8.chunk.js.LICENSE.txt": "/static/js/2.d29a63e8.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/static/media/bg.9264a130.svg",
-    "static/media/logo.4932472c.png": "/static/media/logo.4932472c.png"
+    "main.css": "/esapiens.prova/static/css/main.e87c0c0b.chunk.css",
+    "main.js": "/esapiens.prova/static/js/main.a4017159.chunk.js",
+    "main.js.map": "/esapiens.prova/static/js/main.a4017159.chunk.js.map",
+    "runtime-main.js": "/esapiens.prova/static/js/runtime-main.16668f06.js",
+    "runtime-main.js.map": "/esapiens.prova/static/js/runtime-main.16668f06.js.map",
+    "static/js/2.d29a63e8.chunk.js": "/esapiens.prova/static/js/2.d29a63e8.chunk.js",
+    "static/js/2.d29a63e8.chunk.js.map": "/esapiens.prova/static/js/2.d29a63e8.chunk.js.map",
+    "static/js/3.c7256313.chunk.js": "/esapiens.prova/static/js/3.c7256313.chunk.js",
+    "static/js/3.c7256313.chunk.js.map": "/esapiens.prova/static/js/3.c7256313.chunk.js.map",
+    "index.html": "/esapiens.prova/index.html",
+    "static/css/main.e87c0c0b.chunk.css.map": "/esapiens.prova/static/css/main.e87c0c0b.chunk.css.map",
+    "static/js/2.d29a63e8.chunk.js.LICENSE.txt": "/esapiens.prova/static/js/2.d29a63e8.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/esapiens.prova/static/media/bg.9264a130.svg",
+    "static/media/logo.4932472c.png": "/esapiens.prova/static/media/logo.4932472c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.bba2b1b3.js",
+    "static/js/runtime-main.16668f06.js",
     "static/js/2.d29a63e8.chunk.js",
-    "static/css/main.ba6e41b1.chunk.css",
+    "static/css/main.e87c0c0b.chunk.css",
     "static/js/main.a4017159.chunk.js"
   ]
 }
