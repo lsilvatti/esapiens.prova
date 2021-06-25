@@ -2,6 +2,7 @@ import { Repository } from 'types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faStar } from '@fortawesome/free-solid-svg-icons';
 import { repositorySectionStyles } from '../styles';
+import { Link } from 'react-router-dom';
 
 interface RepositoryProps {
     repo: Repository;
@@ -12,7 +13,8 @@ export default function RepositoryContainer(props: RepositoryProps) {
     const classes = repositorySectionStyles();
 
     return (
-        <div className={classes.root}>
+        <Link style={{textDecoration: "none"}} to={`/user/${repo.owner.login}/${repo.name}/`}>
+         <div  className={classes.root}>
             <div className={classes.info}>
                 <h3>{repo.name}</h3>
                 <div>
@@ -34,5 +36,6 @@ export default function RepositoryContainer(props: RepositoryProps) {
 
            
         </div>
+        </Link>
     )
 }
