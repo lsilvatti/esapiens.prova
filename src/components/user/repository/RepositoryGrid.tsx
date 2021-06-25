@@ -1,10 +1,9 @@
 import { Repository } from 'types';
 import RepositoryContainer from './RepositoryContainer';
 import { repositoryGridClasses } from 'components/user/styles'
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import ReturnError from 'components/common/Error';
-import { getRepos } from 'services/requests';
 
 interface RepositoryGridProps {
     repositories: Repository[];

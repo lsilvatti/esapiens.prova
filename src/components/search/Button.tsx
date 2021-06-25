@@ -8,7 +8,7 @@ export default function SearchButton(props: ButtonProps) {
     const classes = buttonStyles();
     const { query } = props
     const search = () => {
-        if(query == ""){
+        if(query === ""){
 
         }else{
             window.location.assign(`/search?user=${query}&page=1`);

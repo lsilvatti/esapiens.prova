@@ -3,8 +3,7 @@ import NotFound from 'pages/NotFound';
 import Home from 'pages/Home';
 import Search from 'pages/Search'
 import { Fragment } from 'react';
-import bg from 'assets/img/bg.svg';
-import { BrowserRouter as Router, Route, Switch, useRouteMatch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
 

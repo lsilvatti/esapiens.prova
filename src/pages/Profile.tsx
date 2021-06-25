@@ -1,6 +1,5 @@
 import { Fragment, useEffect, useState } from "react"
 import RepositoryGrid from 'components/user/repository/RepositoryGrid';
-import { userPageStyles } from './styles';
 import UserInfo from 'components/user/info/Info';
 import SearchBar from 'components/search/Bar';
 import { getUser, getRepos } from "services/requests";
@@ -17,21 +16,17 @@ interface ProfileParams{
 export default function Profile(){
     let { userId } = useParams<ProfileParams>();
     const [error, setError] = useState(false);
-    const [loading, setLoading] = useState(false);
     const [repos, setRepos] = useState<Repository[]>([])
     const [profile, setProfile] = useState<User>();
-    const { path, url } = useRouteMatch();
+    const { path } = useRouteMatch();
     useEffect(()=>{
-        setLoading(true);
         getUser(userId ?? "").then(async (response) =>{
             console.log(response);
             setProfile(response as User);
             let repoList = await getRepos(userId ?? "");
             setRepos(repoList as Repository[]);
-            setLoading(false);
-        }).catch((error) => {
+        }).catch(() => {
             setError(true);
-            setLoading(false);
         });
     }, []);
 

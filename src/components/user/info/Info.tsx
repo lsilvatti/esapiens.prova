@@ -26,7 +26,7 @@ export default function UserInfo(props: UserInfoProps){
                         <p>
                             <span>{user.followers} seguidores</span> · <span>{user.following} seguindo</span>
                         </p>
-                        <a className={classes.link} href={user.html_url} target="_blank">Visitar perfil no Github</a>
+                        <a className={classes.link} href={user.html_url} rel="noreferrer" target="_blank">Visitar perfil no Github</a>
                 </div>
             </div>
             

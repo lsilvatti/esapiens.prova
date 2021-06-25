@@ -56,7 +56,7 @@ export default function RepositoryDetail(props: RepositoryProps) {
                             )
                         })}</div>
                 </div>  
-                <a className={classes.githubLink} href={repo.html_url} target="_blank">Visitar página do repositório</a>
+                <a className={classes.githubLink} href={repo.html_url} rel="noreferrer" target="_blank">Visitar página do repositório</a>
                 <Link className={classes.link} to={`/user/${user}`}>Voltar para repositórios do usuário</Link>
             </div>
         )

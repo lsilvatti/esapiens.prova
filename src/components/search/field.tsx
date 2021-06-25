@@ -23,7 +23,7 @@ export default function SearchField(props: SearchProps){
     }
 
     function keyPress(e: React.KeyboardEvent<HTMLInputElement>) {
-        if (e.key == "Enter") {
+        if (e.key === "Enter") {
             if(value !== ""){
                 window.location.assign(`/search?user=${value}&page=1`);
             }
