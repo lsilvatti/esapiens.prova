@@ -28,8 +28,7 @@ export default function Search() {
                 let resp = response as UserSearchResponse;
                 setUserList(resp.items);
                 setCount(resp.total_count);
-                setLoading(false);
-                console.log(resp);
+                setLoading(false); 
             }).catch((error) => {
                 setLoading(false);
             });

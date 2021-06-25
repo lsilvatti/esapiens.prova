@@ -21,7 +21,6 @@ export default function Profile(){
     const { path } = useRouteMatch();
     useEffect(()=>{
         getUser(userId ?? "").then(async (response) =>{
-            console.log(response);
             setProfile(response as User);
             let repoList = await getRepos(userId ?? "");
             setRepos(repoList as Repository[]);
