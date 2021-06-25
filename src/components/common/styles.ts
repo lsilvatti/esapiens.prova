@@ -23,7 +23,7 @@ export const errorStyles = createUseStyles({
 export const loadingStyles = createUseStyles({
     root:{
         width: "100%",
-        height: "50%",
+        height: "50vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center"

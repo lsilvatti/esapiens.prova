@@ -11,7 +11,11 @@ export const searchBarStyles = createUseStyles({
     container:{
         display: "flex",
         flexDirection: "row",
-        '@media (min-width: 425px)':{
+        margin: "0 10px",
+        "& button":{
+            marginLeft: 20
+        },
+        '@media (min-width: 426px)':{
             width: "30vw",
         }
     }
@@ -22,13 +26,16 @@ export const searchFieldStyles = createUseStyles({
     root:{
         width:"100%",
         "& input":{
-            width: "100%",
+            width: "95%",
             fontSize: "18px",
             borderRadius: "20px",
             border: "0",
             background: "#ffffff77",
             fontFamily: "Open Sans",
-            padding: "2px 0px 2px 10px",
+            padding: "2px 10px 2px 10px",
+            "@media (min-width: 4266px)":{
+                padding: "2px 0px 2px 10px",
+            },
             "&::placeholder":{
                 color: "#ffffff99",
                 textAlign: "center",
@@ -36,5 +43,18 @@ export const searchFieldStyles = createUseStyles({
             }
         }
        
+    }
+})
+
+export const buttonStyles = createUseStyles({
+    root:{
+        width: "120px",
+        borderRadius: "20px",
+        border: "none",
+        padding: "5px 20px",
+        fontFamily: 'Open Sans',
+        "&:hover":{
+            background:"#d5d5d5"
+        }
     }
 })
