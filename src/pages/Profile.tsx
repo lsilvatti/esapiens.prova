@@ -28,7 +28,7 @@ export default function Profile(){
         }).catch(() => {
             setError(true);
         });
-    }, []);
+    }, [userId]);
 
 
     if(profile === undefined){

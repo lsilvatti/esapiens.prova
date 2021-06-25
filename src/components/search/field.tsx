@@ -32,7 +32,7 @@ export default function SearchField(props: SearchProps){
 
     useEffect(() =>{
         setValue(query.get("user") ?? "");
-    },[])
+    },[query])
     const classes = searchFieldStyles();
 
     return (
