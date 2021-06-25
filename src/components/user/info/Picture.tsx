@@ -8,6 +8,6 @@ export default function ProfilePic(props: ProfilePicture){
 
 
     return (
-        <img src={url} alt={login} className={classes.img} />
+            <img src={url} alt={login} className={classes.img} />
     )
 }
