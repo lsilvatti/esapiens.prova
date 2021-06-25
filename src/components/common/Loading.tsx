@@ -4,7 +4,7 @@ import { loadingStyles } from './styles';
 export default function Loading(){
 
     const classes = loadingStyles();
-    const [color, setColor] = useState("#1F7A8C");
+    const [color] = useState("#1F7A8C");
 
     return (
         <div className={classes.root}>
