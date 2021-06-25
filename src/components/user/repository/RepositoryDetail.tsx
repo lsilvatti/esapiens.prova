@@ -28,8 +28,9 @@ export default function RepositoryDetail(props: RepositoryProps) {
             setLanguages(await getRepoDetail(user, repoName, "languages") as Object);;
             setStargazers(await getRepoDetail(user, repoName, "stargazers") as UserSearch[]);
         });
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         return () => { isMounted = false }
-    }, [])
+    }, [repoName, user])
 
     if (repo === undefined) {
         return <Loading />;

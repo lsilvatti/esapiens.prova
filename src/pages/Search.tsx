@@ -2,10 +2,8 @@ import { useLocation } from 'react-router-dom'
 import { Fragment, useEffect, useState } from 'react';
 import { searchUsers } from 'services/requests';
 import SearchBar from 'components/search/Bar';
-import ReturnError from 'components/common/Error';
 import UserGrid from 'components/user/card/CardGrid';
 import { UserSearch, UserSearchResponse } from 'types';
-import Home from './Home';
 import Loading from 'components/common/Loading';
 
 function useQuery() {
@@ -39,7 +37,7 @@ export default function Search() {
             window.location.assign(`/`)
             
         }
-    }, []);
+    }, [query]);
 
     const TargetPage = (page: number) => {
        window.location.assign(`/search?user=${currentUser}&page=${page}`)

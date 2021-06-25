@@ -24,14 +24,14 @@ export default function UserGrid(props: UserSearchProps) {
         setUserList(users);
         let numberPages = Math.trunc(count/30) + 1;
         setPages(numberPages);
-    }, [users]);
+    }, [users, count]);
 
     return (
         <div className={classes.wrapper}>
             <div className={classes.header}>
                 <h1>Resultados da pesquisa por {query}</h1>
                 <div className={classes.pagination}>
-                    <a onClick={() => getTargetPage(currentPage - 1)} className={currentPage === 1 ? classes.displayNone : classes.paglink}>{"<< Anterior"}</a> <a onClick={() => getTargetPage(currentPage + 1)}  className={currentPage >= pages ? classes.displayNone : classes.paglink} >{"Próxima >>"}</a>
+                    <p onClick={() => getTargetPage(currentPage - 1)} className={currentPage === 1 ? classes.displayNone : classes.paglink}>{"<< Anterior"}</p> <p onClick={() => getTargetPage(currentPage + 1)}  className={currentPage >= pages ? classes.displayNone : classes.paglink} >{"Próxima >>"}</p>
                 </div>
             </div>
             {userList.length === 0 ?
