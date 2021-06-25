@@ -1,62 +1,26 @@
 import { Fragment, useEffect, useState } from "react"
 import RepositoryGrid from 'components/user/repository/RepositoryGrid';
-import response from 'response.json';
-import repository from 'repository.json';
 import { userPageStyles } from './styles';
 import UserInfo from 'components/user/info/Info';
 import SearchBar from 'components/search/Bar';
 import { getUser, getRepos } from "services/requests";
-import { useParams } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch, useParams, useRouteMatch } from "react-router-dom";
 import ReturnError from 'components/common/Error'; 
 import { Repository, User } from "types";
-import { PacmanLoader } from 'react-spinners';
+import  RepositoryDetail from "components/user/repository/RepositoryDetail";
 import Loading from 'components/common/Loading';
 
-interface params{
+interface ProfileParams{
     userId: string
 }
 
 export default function Profile(){
-    const classes = userPageStyles();
-    let { userId } = useParams<params>();
+    let { userId } = useParams<ProfileParams>();
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(false);
     const [repos, setRepos] = useState<Repository[]>([])
-    const [profile, setProfile] = useState<User>({
-        login: "",
-        id: 0,
-        node_id: "",
-        avatar_url: "",
-        gravatar_id: "",
-        url: "",
-        html_url: "",
-        followers_url: "",
-        following_url: "",
-        gists_url: "",
-        starred_url: "",
-        subscriptions_url: "",
-        organizations_url: "",
-        repos_url: "",
-        events_url: "",
-        received_events_url: "",
-        type: "",
-        site_admin: false,
-        name: "",
-        company: "",
-        blog: "",
-        location: "",
-        email: "",
-        hireable: false,
-        bio: "",
-        twitter_username: "",
-        public_repos: 0,
-        public_gists: 0,
-        followers: 0,
-        following: 0,
-        created_at: "",
-        updated_at: "",
-    });
-
+    const [profile, setProfile] = useState<User>();
+    const { path, url } = useRouteMatch();
     useEffect(()=>{
         setLoading(true);
         getUser(userId ?? "").then(async (response) =>{
@@ -69,26 +33,35 @@ export default function Profile(){
             setError(true);
             setLoading(false);
         });
-    }, [])
+    }, []);
 
-    return(
-        <Fragment>
-            <SearchBar />
-            
-            {loading ? <Loading />
-            :
+
+    if(profile === undefined){
+        return (
             <Fragment>
+                
+                <Loading />
+            </Fragment>
+        )
+    }else{
+        return(
+            <Fragment>
+                <SearchBar />
                 {error ? 
                 <ReturnError message="Usuário não encontrado" />
           :
                 <Fragment>
                     <UserInfo user={profile} />
-                    <RepositoryGrid repositories={repos} />
+                    <Router>
+                        <Switch>
+                            <Route exact path={path}><RepositoryGrid repositories={repos} /></Route>
+                            <Route path={`${path}/:repoName`}><RepositoryDetail user={profile.login} /></Route>
+                        </Switch>
+                    </Router>
+                    
                 </Fragment>
           }
             </Fragment>
-            }
-
-        </Fragment>
-    )
+        )
+    }
 }
