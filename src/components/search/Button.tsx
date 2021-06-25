@@ -1,16 +1,24 @@
+import { buttonStyles } from "./styles";
+
 interface ButtonProps {
     query: string
 }
 
 export default function SearchButton(props: ButtonProps) {
+    const classes = buttonStyles();
     const { query } = props
     const search = () => {
-        window.location.assign(`/search?user=${query}`);
+        if(query == ""){
+
+        }else{
+            window.location.assign(`/search?user=${query}&page=1`);
+        }
+        
     }
 
     return (
-            <button onClick={search} type="button">
-                Click Me!
+            <button className={classes.root} onClick={search} type="button">
+                Pesquisar
             </button>
     )
 } 
